@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<head>
+    <title> Happy Valentine's Day </title>
+    <link rel="icon" type="image/x-icon" href="download.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+        <div class="main">
+        <p><strong> I </strong></p>
+        <img src="download.png" class="heart" id="heart">
+        <p><strong> You </strong></p>
+    </div>
+    <nav class="nav">
+        <button class="button1" onclick="increase()">Grow</button>
+        <button class="button1" onclick="colorChange()">Color</button>
+        <button class="button1" onclick="addAnimation()">Add Animation</button>
+        <button class="button1" onclick="stopAnimation()">Stop Animation</button>
+        <button class="button1" onclick="reset()">Reset</button>
+    </nav>
+
+    <script>
+        var size=30;
+        var hue=0;
+        function increase(){
+            size += 5 ;
+            var format= size+'px'
+            document.getElementById('heart').style.width = format ;
+            document.getElementById('heart').style.height = format ;
+        }
+        function colorChange(){
+            hue+=10 ;
+            document.getElementById('heart').style['filter'] = 'hue-rotate(' + (hue) + 'deg)';
+        }
+        function addAnimation(){
+            document.getElementById('heart').style['animation'] = "heartbeat 1s infinite";
+        }
+        function stopAnimation(){
+            document.getElementById('heart').style['animation'] = "None";
+        }
+        function reset(){
+            document.getElementById('heart').style.width = '30px';
+            document.getElementById('heart').style.height = '30px';
+            document.getElementById('heart').style['filter'] = 'hue-rotate(0deg)';
+            document.getElementById('heart').style['animation'] = "None";
+        }
+    </script>
+    
+</body>
